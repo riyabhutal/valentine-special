@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You ❤️</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #ffe6f0;
+  padding-top: 100px;
+}
+
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Puzzle Time 🧩</h2>
+  <p>
+    Solve this to unlock your surprise:
+    <br><br>
+    I have 3 letters.<br>
+    I say it every day.<br>
+    On Valentine’s Day, it matters most.<br><br>
+    What am I?
+  </p>
+
+  <input id="answer" placeholder="Your answer">
+  <br>
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div id="result" class="hidden">
+    <h1>Will you be my Valentine? ❤️</h1>
+    <p>I love you.</p>
+  </div>
+</div>
+
+<script>
+function checkAnswer() {
+  let ans = document.getElementById("answer").value.toLowerCase().trim();
+
+  if(ans === "ily" || ans === "i love you") {
+    document.getElementById("result").classList.remove("hidden");
+  } else {
+    alert("Try again 😉");
+  }
+}
+</script>
+
+</body>
+</html>
